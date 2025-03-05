@@ -100,6 +100,10 @@ cd build # 빌드 디렉토리로 이동
 pintos --qemu -- run alarm-multiple # qemu를 이용해 실행하도록 설정
 ```
 실행후 다음 화면이 나온다.![[result.png]]
+- 핀토스는 실행시 모든 아웃풋을 VGA display 혹은 첫번째 시리얼포트로 보낸다. (Bochs stdin과 stdout과 연결). 아웃풋을 로그파일로 기록하려면 다음과 같이하면된다.
+```bash
+pintos --qemu -- -q run alarm-multiple > logfile
+```
 
 > [!NOTE] 고생의 기록
 > [공식 문서](https://web.stanford.edu/class/cs140/projects/pintos/)에 나와있는데로 하려했으나... 무한부팅, Pintos 코드 오류등등 수많은 오류로 인해 삽질을 많이했다. 아마 오래된 코드이다보니 호환성 이슈이지 않을까 생각한다. 이 글을 보는 여러분은 이러한 삽질을 하지 않았으면 한다.
